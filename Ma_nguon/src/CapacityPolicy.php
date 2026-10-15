@@ -8,6 +8,7 @@ final class CapacityPolicy
         if ($capacity <= 0 || $registered < 0) {
             return false;
         }
+
         return $registered < $capacity;
     }
 }
