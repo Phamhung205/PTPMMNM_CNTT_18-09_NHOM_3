@@ -1,0 +1,63 @@
+﻿Lab03 - PHP 8.1.25 - Windows/XAMPP - 2026-10-15
+
+COMMAND: php tests/run.php
+PASS all
+PASS keyword-ignore-case
+PASS not-found
+PASS array-input
+PASS escape-html
+PASS valid-form
+PASS invalid-form
+TESTS=7 FAILED=0
+
+COMMAND: php tests/extension.php
+PASS all
+PASS keyword
+PASS category
+PASS available
+PASS combined
+PASS full-category
+PASS unknown-category
+PASS input-unchanged
+TESTS=8 FAILED=0
+
+COMMAND: php tests/edge-cases.php
+PASS keyword-at-position-zero
+PASS empty-source
+PASS keyword-and-category
+PASS keyword-and-availability
+PASS over-capacity-is-unavailable
+PASS entire-source-unchanged
+PASS trim-keyword
+PASS array-category
+PASS array-availability
+PASS normalize-form
+PASS name-120-bytes
+PASS name-121-bytes
+PASS name-null-byte
+PASS array-form-fields
+PASS escape-tags-quotes-ampersand
+TESTS=15 FAILED=0
+
+COMMAND: php tests/ui-demo.php
+DEMO_DATA_ASSERTIONS=PASS | EVENTS=6 | SEATS=96 | AVAILABLE=68 | VIP=16 | STANDARD=52
+
+PHP syntax scan:
+No syntax errors detected in Ma_nguon\data\event-content.php
+No syntax errors detected in Ma_nguon\data\events.php
+No syntax errors detected in Ma_nguon\data\ui-demo-events.php
+No syntax errors detected in Ma_nguon\public\event.php
+No syntax errors detected in Ma_nguon\public\index.php
+No syntax errors detected in Ma_nguon\public\register.php
+No syntax errors detected in Ma_nguon\public\ticket-preview.php
+No syntax errors detected in Ma_nguon\public\ui-demo.php
+No syntax errors detected in Ma_nguon\src\EventFilter.php
+No syntax errors detected in Ma_nguon\src\Input.php
+No syntax errors detected in Ma_nguon\templates\event-presentation.php
+No syntax errors detected in Ma_nguon\templates\footer.php
+No syntax errors detected in Ma_nguon\templates\header.php
+No syntax errors detected in Ma_nguon\tests\edge-cases.php
+No syntax errors detected in Ma_nguon\tests\extension.php
+No syntax errors detected in Ma_nguon\tests\helper.php
+No syntax errors detected in Ma_nguon\tests\run.php
+No syntax errors detected in Ma_nguon\tests\ui-demo.php

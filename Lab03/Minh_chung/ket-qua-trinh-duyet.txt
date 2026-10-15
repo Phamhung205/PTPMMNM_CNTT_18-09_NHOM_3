@@ -1,0 +1,52 @@
+PASS HTTP GET /
+NOTE original-template favicon.ico HTTP 404 (cosmetic, outside Lab03 requirements)
+PASS results /
+PASS HTTP GET /?q=php
+PASS results /?q=php
+PASS HTTP GET /?q=xyz
+PASS results /?q=xyz
+PASS HTTP GET /?category=tech
+PASS results /?category=tech
+PASS HTTP GET /?available=1
+PASS results /?available=1
+PASS HTTP GET /?q=Git&category=tech&available=1
+PASS results /?q=Git&category=tech&available=1
+PASS HTTP GET /?category=design&available=1
+PASS results /?category=design&available=1
+PASS HTTP GET /?category=unknown
+PASS results /?category=unknown
+PASS HTTP GET /?q=PHP&category=design
+PASS results /?q=PHP&category=design
+PASS HTTP GET /?q[]=php&category[]=tech&available[]=1
+PASS results /?q[]=php&category[]=tech&available[]=1
+PASS HTTP GET /?available=0
+PASS results /?available=0
+PASS HTTP GET /?q=%20php%20
+PASS results /?q=%20php%20
+PASS submit-combined-form
+PASS retain-keyword
+PASS retain-category
+PASS retain-checkbox
+PASS empty-state-visible
+PASS reset-filters
+PASS escape-query-preserves-text
+PASS unknown-category-preserves-text
+PASS no-script-injection
+PASS initial-get-has-no-result
+PASS server-validation-errors
+PASS retain-event-after-error
+PASS retain-email-after-error
+PASS invalid-no-preview
+PASS valid-preview-normalization
+PASS preview-does-not-create-html-tag
+PASS preview-literal-html-text
+PASS invalid-id-http-999
+PASS reject-id-999
+PASS invalid-id-http-demo-open-source
+PASS reject-id-demo-open-source
+PASS array-post-safe
+PASS no-session-or-cookie-created
+PASS mobile-no-horizontal-overflow
+PASS filter-without-javascript
+PASS no-application-console-or-network-errors
+BROWSER_CHECKS=50 FAILED=0

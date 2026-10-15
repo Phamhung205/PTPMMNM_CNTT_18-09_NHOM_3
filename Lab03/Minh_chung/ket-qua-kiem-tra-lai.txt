@@ -1,0 +1,94 @@
+TARGET=http://127.0.0.1:8103
+Independent HTTP/browser regression audit
+PASS filter-matrix q=&category=&available= => [1,2,3]
+PASS filter-matrix q=&category=&available=1 => [1,3]
+PASS filter-matrix q=&category=tech&available= => [1,3]
+PASS filter-matrix q=&category=tech&available=1 => [1,3]
+PASS filter-matrix q=&category=design&available= => [2]
+PASS filter-matrix q=&category=design&available=1 => []
+PASS filter-matrix q=&category=unknown&available= => []
+PASS filter-matrix q=&category=unknown&available=1 => []
+PASS filter-matrix q=php&category=&available= => [1]
+PASS filter-matrix q=php&category=&available=1 => [1]
+PASS filter-matrix q=php&category=tech&available= => [1]
+PASS filter-matrix q=php&category=tech&available=1 => [1]
+PASS filter-matrix q=php&category=design&available= => []
+PASS filter-matrix q=php&category=design&available=1 => []
+PASS filter-matrix q=php&category=unknown&available= => []
+PASS filter-matrix q=php&category=unknown&available=1 => []
+PASS filter-matrix q=PHP&category=&available= => [1]
+PASS filter-matrix q=PHP&category=&available=1 => [1]
+PASS filter-matrix q=PHP&category=tech&available= => [1]
+PASS filter-matrix q=PHP&category=tech&available=1 => [1]
+PASS filter-matrix q=PHP&category=design&available= => []
+PASS filter-matrix q=PHP&category=design&available=1 => []
+PASS filter-matrix q=PHP&category=unknown&available= => []
+PASS filter-matrix q=PHP&category=unknown&available=1 => []
+PASS filter-matrix q=Git&category=&available= => [3]
+PASS filter-matrix q=Git&category=&available=1 => [3]
+PASS filter-matrix q=Git&category=tech&available= => [3]
+PASS filter-matrix q=Git&category=tech&available=1 => [3]
+PASS filter-matrix q=Git&category=design&available= => []
+PASS filter-matrix q=Git&category=design&available=1 => []
+PASS filter-matrix q=Git&category=unknown&available= => []
+PASS filter-matrix q=Git&category=unknown&available=1 => []
+PASS filter-matrix q=Design&category=&available= => [2]
+PASS filter-matrix q=Design&category=&available=1 => []
+PASS filter-matrix q=Design&category=tech&available= => []
+PASS filter-matrix q=Design&category=tech&available=1 => []
+PASS filter-matrix q=Design&category=design&available= => [2]
+PASS filter-matrix q=Design&category=design&available=1 => []
+PASS filter-matrix q=Design&category=unknown&available= => []
+PASS filter-matrix q=Design&category=unknown&available=1 => []
+PASS filter-matrix q=xyz&category=&available= => []
+PASS filter-matrix q=xyz&category=&available=1 => []
+PASS filter-matrix q=xyz&category=tech&available= => []
+PASS filter-matrix q=xyz&category=tech&available=1 => []
+PASS filter-matrix q=xyz&category=design&available= => []
+PASS filter-matrix q=xyz&category=design&available=1 => []
+PASS filter-matrix q=xyz&category=unknown&available= => []
+PASS filter-matrix q=xyz&category=unknown&available=1 => []
+PASS filter-matrix q=++php++&category=&available= => [1]
+PASS filter-matrix q=++php++&category=&available=1 => [1]
+PASS filter-matrix q=++php++&category=tech&available= => [1]
+PASS filter-matrix q=++php++&category=tech&available=1 => [1]
+PASS filter-matrix q=++php++&category=design&available= => []
+PASS filter-matrix q=++php++&category=design&available=1 => []
+PASS filter-matrix q=++php++&category=unknown&available= => []
+PASS filter-matrix q=++php++&category=unknown&available=1 => []
+PASS malformed-get q[a][b]=php
+PASS malformed-get category[a][b]=tech
+PASS malformed-get available[a][b]=1
+PASS malformed-get q=%FF%FE
+PASS malformed-get category=%FF%FE
+PASS malformed-get q=%00
+PASS malformed-get available=true
+PASS malformed-get available=2
+PASS post empty-post
+PASS post spaces-name
+PASS post name-120-bytes
+PASS post name-121-bytes
+PASS post unicode-name
+PASS post unicode-byte-limit
+PASS post nul-inside-name
+PASS post missing-email
+PASS post long-email
+PASS post negative-event
+PASS post fraction-event
+PASS post overflow-event
+PASS post nested-name
+PASS post full-event-preview-as-specified
+PASS related-route /event.php?id=1 HTTP 200
+PASS related-route /event.php?id=2 HTTP 200
+PASS related-route /event.php?id=3 HTTP 200
+PASS related-route /event.php?id=999 HTTP 404
+PASS related-route /event.php?id[]=1 HTTP 404
+PASS related-route /ticket-preview.php?id=1 HTTP 404
+PASS related-route /ticket-preview.php?id[]=demo-open-source HTTP 404
+PASS unchecked-checkbox-omitted-and-full-event-visible
+PASS no-javascript-submit-vietnamese-form
+PASS fresh-get-no-persisted-registration
+PASS responsive-list-and-form-320px
+PASS responsive-list-and-form-768px
+PASS responsive-list-and-form-1440px
+AUDIT_CASES=91 FAILED=0
